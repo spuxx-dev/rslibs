@@ -1,0 +1,23 @@
+name: Pull Requests
+
+on:
+  workflow_dispatch:
+  pull_request:
+    types: [opened, reopened, edited, synchronize]
+
+permissions:
+  contents: write
+  pull-requests: write
+
+jobs:
+  quality_gates:
+    name: Quality Gates
+    uses: ./.github/workflows/quality_gates.yml
+
+  dependabot_auto_merge:
+    name: Auto-merge dependabot PR
+    uses: spuxx-dev/cicd/.github/workflows/dependabot_auto_merge.yml@v1
+    needs:
+      - quality_gates
+    with:
+      merge-method: squash
