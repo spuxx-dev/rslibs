@@ -14,6 +14,6 @@ permissions:
 jobs:
   run_release_please:
     name: Release Please
-    uses: spuxx-dev/cicd/.github/workflows/release_please.yml
+    uses: spuxx-dev/cicd/.github/workflows/release_please.yml@v1
     secrets:
       TOKEN: ${{ secrets.RELEASE_PLEASE_TOKEN }}
