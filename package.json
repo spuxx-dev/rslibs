@@ -1,0 +1,23 @@
+{
+  "name": "rslibs",
+  "version": "1.0.0",
+  "description": " A metarepository containing various libraries I maintain for my typical rust stack.",
+  "type": "module",
+  "private": true,
+  "license": "MIT",
+  "homepage": "https://github.com/spuxx-dev/rslibs#readme",
+  "author": {
+    "name": "spuxx",
+    "email": "hi@spuxx.dev",
+    "url": "https://spuxx.dev"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/spuxx-dev/rslibs.git"
+  },
+  "main": "index.js",
+  "scripts": {},
+  "devDependencies": {
+    "release-please": "17.6.0"
+  }
+}
