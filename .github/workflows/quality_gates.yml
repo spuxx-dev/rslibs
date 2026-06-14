@@ -1,0 +1,16 @@
+name: Quality Gates
+
+on:
+  workflow_call:
+
+permissions:
+  contents: read
+
+jobs:
+  run_checks:
+    name: Run code checks
+    uses: spuxx-dev/cicd/.github/workflows/cargo_run_checks.yml@v1
+
+  run_unit_tests:
+    name: Run tests (vitest)
+    uses: spuxx-dev/cicd/.github/workflows/cargo_run_tests.yml@v1

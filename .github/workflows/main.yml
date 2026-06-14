@@ -12,8 +12,14 @@ permissions:
   id-token: write
 
 jobs:
+  quality_gates:
+    name: Quality Gates
+    uses: ./.github/workflows/quality_gates.yml
+
   run_release_please:
     name: Release Please
     uses: spuxx-dev/cicd/.github/workflows/release_please.yml@v1
+    needs:
+      - quality_gates
     secrets:
       TOKEN: ${{ secrets.RELEASE_PLEASE_TOKEN }}
