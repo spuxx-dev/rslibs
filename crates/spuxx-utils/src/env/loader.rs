@@ -34,7 +34,9 @@ mod tests {
     #[test]
     #[should_panic]
     fn required_panics_if_value_is_null() {
-        required("FOO");
+        temp_env::with_var("FOO", None::<&str>, || {
+            required("FOO");
+        });
     }
 
     #[test]
@@ -47,7 +49,9 @@ mod tests {
 
     #[test]
     fn optional_falls_back_to_default() {
-        let foo = optional("FOO", "baz");
-        assert_eq!(foo, "baz");
+        temp_env::with_var("FOO", None::<&str>, || {
+            let foo = optional("FOO", "baz");
+            assert_eq!(foo, "baz");
+        });
     }
 }

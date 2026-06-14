@@ -1,0 +1,7 @@
+[alias]
+# Print a coverage summary table to the terminal.
+coverage = "llvm-cov --workspace --all-features --remap-path-prefix"
+# Generate an LCOV report (lcov.info) for upload to coverage services.
+coverage-lcov = "llvm-cov --workspace --all-features --lcov --output-path lcov.info"
+# Generate an HTML coverage report and open it in the default browser.
+coverage-html = "llvm-cov --workspace --all-features --open"
