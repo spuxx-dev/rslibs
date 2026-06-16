@@ -21,9 +21,9 @@
 /// use spuxx_utils::env::loader::{optional, required};
 /// use std::sync::LazyLock;
 ///
-/// struct Config {
-///     database_url: String,
-///     port: u16,
+/// pub struct Config {
+///     pub database_url: String,
+///     pub port: u16,
 /// }
 ///
 /// impl EnvConfig for Config {
